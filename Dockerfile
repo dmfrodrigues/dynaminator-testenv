@@ -4,6 +4,7 @@ ENV TZ=Europe/Lisbon
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 RUN apt-get install -y \
+    build-essential \
     cmake \
     curl \
     git \
@@ -11,10 +12,11 @@ RUN apt-get install -y \
     libwebsocketpp-dev libasio-dev
 
 # Install Catch2
+WORKDIR /tmp
 RUN git clone https://github.com/catchorg/Catch2.git
-RUN cd Catch2/
+WORKDIR /tmp/Catch2/
 RUN cmake -Bbuild -H. -DBUILD_TESTING=OFF
-RUN sudo cmake --build build/ --target install
+RUN cmake --build build/ --target install
 
 # Get assets
 RUN mkdir -p /repo

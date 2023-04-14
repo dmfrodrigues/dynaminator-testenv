@@ -8,6 +8,7 @@ RUN apt-get install -y \
     cmake \
     curl \
     git \
+    lcov \
     nlohmann-json3-dev \
     libwebsocketpp-dev libasio-dev
 

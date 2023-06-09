@@ -26,14 +26,13 @@ WORKDIR /data/
 RUN mkdir -p network
 RUN mkdir -p network/crossroads1
 RUN mkdir -p network/crossroads2
-RUN mkdir -p od
 RUN mkdir -p out
-RUN mkdir -p porto
-RUN curl -L https://www.dropbox.com/s/5hwruycfaulksa3/net.net.xml --output porto/porto-armis.net.xml
-RUN curl -L https://www.dropbox.com/s/y1obv0hitxysvqk/taz.xml --output porto/porto-armis.taz.xml
-RUN curl -L https://www.dropbox.com/s/oobwk5bi4qew4np/matrix.9.0.10.0.2.fma --output porto/matrix.9.0.10.0.2.fma
-RUN curl -L https://www.dropbox.com/s/1v3hzyoyest33wi/crossroads1.net.xml --output network/crossroads1/crossroads1.net.xml
-RUN curl -L https://www.dropbox.com/s/cz5qvgwofby6x6r/crossroads2.net.xml --output network/crossroads2/crossroads2.net.xml
+RUN mkdir -p dynaminator-data
+RUN curl -L https://www.dropbox.com/s/5hwruycfaulksa3/net.net.xml           --output dynaminator-data/porto-armis.net.xml
+RUN curl -L https://www.dropbox.com/s/y1obv0hitxysvqk/taz.xml               --output dynaminator-data/porto-armis.taz.xml
+RUN curl -L https://www.dropbox.com/s/oobwk5bi4qew4np/matrix.9.0.10.0.2.fma --output dynaminator-data/matrix.9.0.10.0.2.fma
+RUN curl -L https://www.dropbox.com/s/1v3hzyoyest33wi/crossroads1.net.xml   --output network/crossroads1/crossroads1.net.xml
+RUN curl -L https://www.dropbox.com/s/cz5qvgwofby6x6r/crossroads2.net.xml   --output network/crossroads2/crossroads2.net.xml
 
 # Workdir
 RUN mkdir -p /repo

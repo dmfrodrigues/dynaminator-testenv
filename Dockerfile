@@ -11,6 +11,7 @@ RUN apt-get install -y \
     git \
     lcov \
     nlohmann-json3-dev \
+    libsfml-dev \
     libwebsocketpp-dev libasio-dev
 
 # Install Catch2
